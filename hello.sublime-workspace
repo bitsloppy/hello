@@ -7,6 +7,14 @@
 	},
 	"buffers":
 	[
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -65,6 +73,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"-"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -72,6 +81,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" "
 		],
 		"reverse": false,
 		"scrollbar_highlights": true,
@@ -86,6 +96,35 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -128,7 +167,7 @@
 		]
 	},
 	"pinned_build_system": "",
-	"project": "bit-sloppy.sublime-project",
+	"project": "hello.sublime-project",
 	"replace":
 	{
 		"height": 50.0
