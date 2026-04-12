@@ -8,19 +8,19 @@
 .banner {
   font-family: var(--font-workbench), monospace;
   font-size: clamp(5px, 1.55vw, 11.5px);
-  line-height: 1.15;
-  letter-spacing: 0em;
+  line-height: 1.25;
   white-space: pre;
   display: inline-block;
   text-align: left;
 }
 
-/* raspberry — AAA vs #f5f6ee */
-.hash {
-  color: #903557;
+.hash,
+.dot {
+  display: inline-block;
+  width: 0.6em;
+  text-align: center;
+  overflow: hidden;
 }
 
-/* decorative sage grey */
-.dot {
-  color: #c2c4b8;
-}
+.hash { color: #903557; }
+.dot  { color: #c2c4b8; }
