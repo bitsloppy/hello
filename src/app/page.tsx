@@ -20,7 +20,7 @@ export default function Home() {
 
         <div className={styles.bannerMeta}>
           <div className={styles.rule} />
-          <span className={styles.since}>// SINCE 2026 //</span>
+          <span className={styles.since}>&#47;&#47; SINCE 2026 &#47;&#47;</span>
           <div className={styles.rule} />
         </div>
 
@@ -28,7 +28,7 @@ export default function Home() {
       </header>
 
       {/* ── PROJECTS ── */}
-      <p className={styles.sectionLabel}>// PROJECTS</p>
+      <p className={styles.sectionLabel}>&#47;&#47; PROJECTS</p>
 
       <main>
         <ul className={styles.grid} role="list">
@@ -45,7 +45,7 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className={styles.footer}>
-        <span className={styles.footerSig}>BITSLOPPY.VERCEL.APP // HANDCRAFTED WITH PUBLIC DATA</span>
+        <span className={styles.footerSig}>BITSLOPPY.VERCEL.APP &#47;&#47; HANDCRAFTED WITH PUBLIC DATA</span>
         <span className={styles.footerSig}>MIT LICENSE</span>
       </footer>
     </>
