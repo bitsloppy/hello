@@ -1,0 +1,26 @@
+.wrap {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  margin: 0 auto 1rem;
+}
+
+.banner {
+  font-family: var(--font-workbench), monospace;
+  font-size: clamp(5px, 1.55vw, 11.5px);
+  line-height: 1.15;
+  letter-spacing: 0em;
+  white-space: pre;
+  display: inline-block;
+  text-align: left;
+}
+
+/* raspberry — AAA vs #f5f6ee */
+.hash {
+  color: #903557;
+}
+
+/* decorative sage grey */
+.dot {
+  color: #c2c4b8;
+}
