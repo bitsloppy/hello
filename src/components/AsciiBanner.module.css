@@ -8,7 +8,7 @@
 .banner {
   font-family: var(--font-doto), monospace;
   font-size: clamp(5px, 1.55vw, 11.5px);
-  line-height: 1.25;
+  line-height: 1;
   white-space: pre;
   display: inline-block;
   text-align: left;
