@@ -10,7 +10,7 @@ export default function Home() {
       {/* ── HERO ── */}
       <header className={styles.hero}>
         <p className={styles.tagline}>
-          Vibe coding using public data and AI tools to <br /> create cool projects. </p>
+          Vibe coding using <br /> public data and AI tools to <br /> create cool projects. </p>
 
 
           <p className={styles.tagline}>It&apos;s a{" "}

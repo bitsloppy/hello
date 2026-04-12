@@ -6,7 +6,7 @@
 }
 
 .banner {
-  font-family: var(--font-workbench), monospace;
+  font-family: var(--font-doto), monospace;
   font-size: clamp(5px, 1.55vw, 11.5px);
   line-height: 1.25;
   white-space: pre;
@@ -22,5 +22,6 @@
   overflow: hidden;
 }
 
-.hash { color: #903557; }
+.hash { color: #903557;
+        font-weight: 900; }
 .dot  { color: #c2c4b8; }
