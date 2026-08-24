@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Workbench, Silkscreen, Courier_Prime } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const workbench = Workbench({
@@ -36,6 +37,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${workbench.variable} ${silkscreen.variable} ${courierPrime.variable}`}>
       <body>{children}</body>
+      {/* Google Analytics */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-FK72VFXQK8"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-FK72VFXQK8');
+        `}
+      </Script>
     </html>
   );
 }
