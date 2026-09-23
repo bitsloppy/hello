@@ -7,13 +7,30 @@ interface ProjectCardProps {
   project: Project;
 }
 
+const STATUS_LABELS: Record<string, string> = {
+  live: "// LIVE",
+  "in-progress": "// IN PROGRESS",
+  tool: "// TOOL",
+};
+
+const CTA_LABELS: Record<string, string> = {
+  live: "explore",
+  "in-progress": "view on github",
+  tool: "view source",
+};
+
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { tag, title, description, href, accent, bgColor, image } = project;
+  const { tag, title, description, href, accent, bgColor, image, status } =
+    project;
+
+  const isExternal = href.startsWith("http");
 
   return (
     <Link
       href={href}
       className={styles.card}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       style={
         {
           "--card-accent": accent,
@@ -32,24 +49,27 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             sizes="(max-width: 640px) 100vw, 320px"
           />
         ) : (
-          <span className={styles.imgLabel}>[ IMAGE ]</span>
+          <span className={styles.watermark} aria-hidden>
+            {title}
+          </span>
         )}
+
+        {/* Status badge */}
+        <div className={styles.statusBadge}>
+          {status === "live" && (
+            <span className={styles.statusDot} aria-hidden />
+          )}
+          <span>{STATUS_LABELS[status]}</span>
+        </div>
       </div>
 
       {/* Body */}
       <div className={styles.body}>
-        {/* wa-badge equivalent — small pill tag */}
         <span className={styles.tag}>{tag}</span>
-
-        {/* wa-card__header */}
         <span className={styles.title}>{title}</span>
-
-        {/* wa-card__body */}
         <span className={styles.desc}>{description}</span>
-
-        {/* wa-button equivalent */}
         <span className={styles.cta}>
-          explore <span aria-hidden>→</span>
+          {CTA_LABELS[status]} <span aria-hidden>→</span>
         </span>
       </div>
     </Link>
