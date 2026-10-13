@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Image from "next/image";
+"use client";
+
 import type { Project } from "@/data/projects";
 import styles from "./ProjectCard.module.css";
 
@@ -20,41 +20,37 @@ const CTA_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { tag, title, description, href, accent, bgColor, image, status } =
-    project;
-
+  const { tag, title, description, href, accent, bgColor, status } = project;
   const isExternal = href.startsWith("http");
 
-  return (
-    <Link
-      href={href}
-      className={styles.card}
-      target={isExternal ? "_blank" : undefined}
-      rel={isExternal ? "noopener noreferrer" : undefined}
-      style={
-        {
-          "--card-accent": accent,
-          "--card-bg": bgColor,
-        } as React.CSSProperties
-      }
-    >
-      {/* Thumbnail */}
-      <div className={styles.thumb}>
-        {image ? (
-          <Image
-            src={image}
-            alt={title}
-            fill
-            className={styles.img}
-            sizes="(max-width: 640px) 100vw, 320px"
-          />
-        ) : (
-          <span className={styles.watermark} aria-hidden>
-            {title}
-          </span>
-        )}
+  const linkProps = isExternal
+    ? { target: "_blank" as const, rel: "noopener noreferrer" }
+    : {};
 
-        {/* Status badge */}
+  function handleCardClick() {
+    if (isExternal) {
+      window.open(href, "_blank", "noopener,noreferrer");
+    } else {
+      window.location.href = href;
+    }
+  }
+
+  return (
+    <wa-card
+      className={styles.card}
+      onClick={handleCardClick}
+      style={{ "--card-accent": accent } as React.CSSProperties}
+    >
+      {/* ── Media slot: coloured thumbnail ── */}
+      <div
+        slot="media"
+        className={styles.thumb}
+        style={{ background: bgColor }}
+      >
+        <div className={styles.dotGrid} aria-hidden />
+        <span className={styles.watermark} aria-hidden>
+          {title}
+        </span>
         <div className={styles.statusBadge}>
           {status === "live" && (
             <span className={styles.statusDot} aria-hidden />
@@ -63,15 +59,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       </div>
 
-      {/* Body */}
+      {/* ── Default slot: card body ── */}
       <div className={styles.body}>
         <span className={styles.tag}>{tag}</span>
-        <span className={styles.title}>{title}</span>
-        <span className={styles.desc}>{description}</span>
-        <span className={styles.cta}>
-          {CTA_LABELS[status]} <span aria-hidden>→</span>
-        </span>
+        <strong className={styles.title}>{title}</strong>
+        <p className={styles.desc}>{description}</p>
       </div>
-    </Link>
+
+      {/* ── Footer slot: CTA link ── */}
+      <a
+        slot="footer"
+        href={href}
+        {...linkProps}
+        className={styles.cta}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {CTA_LABELS[status]} <span aria-hidden>→</span>
+      </a>
+    </wa-card>
   );
 }

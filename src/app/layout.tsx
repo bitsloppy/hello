@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Workbench, Silkscreen, Courier_Prime } from "next/font/google";
 import Script from "next/script";
+import WebAwesomeLoader from "@/components/WebAwesomeLoader";
 import "./globals.css";
 
 const workbench = Workbench({
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bit Sloppy",
     description: "Vibe coding using public data and AI tools to create cool projects.",
-    url: "https://bitsloppy.vercel.app",
+    url: "https://bitsloppy.com",
     siteName: "Bit Sloppy",
   },
 };
@@ -35,8 +36,27 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${workbench.variable} ${silkscreen.variable} ${courierPrime.variable}`}>
-      <body>{children}</body>
+    <html
+      lang="en"
+      className={`${workbench.variable} ${silkscreen.variable} ${courierPrime.variable}`}
+    >
+      <head>
+        {/* Web Awesome — default theme tokens */}
+        <link
+          rel="stylesheet"
+          href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/themes/default.css"
+        />
+        {/* Web Awesome — utility classes */}
+        <link
+          rel="stylesheet"
+          href="https://ka-f.webawesome.com/webawesome@3.14.0/styles/utilities.css"
+        />
+      </head>
+      <body>
+        {/* Injects WA component loader as type="module" script */}
+        <WebAwesomeLoader />
+        {children}
+      </body>
       {/* Google Analytics */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-FK72VFXQK8"

@@ -47,15 +47,4 @@ export const projects: Project[] = [
     bgColor: "#23405a",
     status: "tool",
   },
-  {
-    slug: "marrickvillians",
-    tag: "maps · history",
-    title: "Marrickvillians",
-    description:
-      "Walking tours of notable crimes and historical events of the inner west — sourced from Trove newspaper archives.",
-    href: "https://github.com/bitsloppy/marrickvillians",
-    accent: "#903557",
-    bgColor: "#581e38",
-    status: "in-progress",
-  },
 ];
