@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 import styles from "./ProjectCard.module.css";
 
@@ -20,7 +21,7 @@ const CTA_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { tag, title, description, href, accent, bgColor, status } = project;
+  const { tag, title, description, href, accent, bgColor, status, image } = project;
   const isExternal = href.startsWith("http");
 
   const linkProps = isExternal
@@ -45,12 +46,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div
         slot="media"
         className={styles.thumb}
-        style={{ background: bgColor }}
+        style={image ? undefined : { background: bgColor }}
       >
-        <div className={styles.dotGrid} aria-hidden />
-        <span className={styles.watermark} aria-hidden>
-          {title}
-        </span>
+        {image ? (
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className={styles.img}
+            sizes="(max-width: 640px) 100vw, 320px"
+          />
+        ) : (
+          <>
+            <div className={styles.dotGrid} aria-hidden />
+            <span className={styles.watermark} aria-hidden>
+              {title}
+            </span>
+          </>
+        )}
         <div className={styles.statusBadge}>
           {status === "live" && (
             <span className={styles.statusDot} aria-hidden />

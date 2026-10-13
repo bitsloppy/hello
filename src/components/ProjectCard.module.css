@@ -10,6 +10,11 @@
 }
 
 /* subtle dot-grid overlay */
+.img {
+  object-fit: cover;
+  z-index: 1;
+}
+
 .dotGrid {
   position: absolute;
   inset: 0;

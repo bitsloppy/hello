@@ -24,6 +24,7 @@ export const projects: Project[] = [
     accent: "#7c3aed",
     bgColor: "#3b1a78",
     status: "live",
+    image: "/images/sackar-atlas-hero.jpg",
   },
   {
     slug: "curriculum-remix",
