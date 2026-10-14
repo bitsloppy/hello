@@ -17,7 +17,7 @@ const STATUS_LABELS: Record<string, string> = {
 const CTA_LABELS: Record<string, string> = {
   live: "explore",
   "in-progress": "view on github",
-  tool: "view source",
+  tool: "view on github",
 };
 
 export default function ProjectCard({ project }: ProjectCardProps) {
