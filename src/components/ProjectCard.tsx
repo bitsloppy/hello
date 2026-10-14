@@ -61,7 +61,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         </a>
         <p className={styles.desc}>{description}</p>
         {releasedAt && (
-          <span className={styles.released}>// released {releasedAt}</span>
+          <span className={styles.released}>{"//"} released {releasedAt}</span>
         )}
       </div>
 
