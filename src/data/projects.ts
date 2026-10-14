@@ -5,11 +5,13 @@ export interface Project {
   tag: string;
   title: string;
   description: string;
-  href: string;
+  /** Live site URL — used for title/image link and "explore" CTA. Optional. */
+  siteHref?: string;
+  /** GitHub repo URL — always shown in footer. */
+  githubHref: string;
   accent: string;
   bgColor: string;
   status: ProjectStatus;
-  /** Optional: path to a preview image under /public */
   image?: string;
 }
 
@@ -20,7 +22,8 @@ export const projects: Project[] = [
     title: "Sackar Atlas",
     description:
       "Making the 2023 NSW Special Commission of Inquiry into LGBTIQ hate crimes navigable — cases, locations, people, and events from the public record.",
-    href: "https://sackar-atlas.bitsloppy.com",
+    siteHref: "https://sackar-atlas.bitsloppy.com",
+    githubHref: "https://github.com/bitsloppy/sackar-atlas",
     accent: "#7c3aed",
     bgColor: "#3b1a78",
     status: "in-progress",
@@ -32,7 +35,7 @@ export const projects: Project[] = [
     title: "Curriculum Remix",
     description:
       "NSW curriculum data reimagined. Scraping and remixing NESA's curriculum framework into something you can actually navigate.",
-    href: "https://github.com/bitsloppy/curriculum-remix",
+    githubHref: "https://github.com/bitsloppy/curriculum-remix",
     accent: "#3a9874",
     bgColor: "#1e5c47",
     status: "in-progress",
@@ -44,7 +47,7 @@ export const projects: Project[] = [
     title: "AGSM Rules",
     description:
       "The Australian Government Style Manual compiled as 270 portable, AI-native rules. YAML, JSON, and prompt-ready formats.",
-    href: "https://github.com/bitsloppy/aus-gov-style-rules",
+    githubHref: "https://github.com/bitsloppy/aus-gov-style-rules",
     accent: "#4a6b8c",
     bgColor: "#23405a",
     status: "tool",
