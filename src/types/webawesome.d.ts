@@ -1,16 +1,15 @@
 /**
  * TypeScript declarations for Web Awesome web components.
- * Extends React's JSX intrinsic elements so custom elements
- * can be used in TSX without type errors.
+ * Uses declare module 'react' augmentation for React 19 / Next.js 15 compatibility.
  * https://webawesome.com
  */
-import type React from "react";
 
-declare global {
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
       "wa-card": React.HTMLAttributes<HTMLElement> & {
         class?: string;
+        "data-variant"?: string;
       };
       "wa-button": React.HTMLAttributes<HTMLElement> & {
         variant?: "brand" | "success" | "neutral" | "warning" | "danger";
@@ -35,13 +34,6 @@ declare global {
         label?: string;
         library?: string;
         src?: string;
-        class?: string;
-      };
-      "wa-tag": React.HTMLAttributes<HTMLElement> & {
-        variant?: string;
-        size?: string;
-        pill?: boolean;
-        removable?: boolean;
         class?: string;
       };
     }
