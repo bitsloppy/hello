@@ -35,6 +35,7 @@ export const projects: Project[] = [
     title: "Curriculum Remix",
     description:
       "NSW curriculum data reimagined. Scraping and remixing NESA's curriculum framework into something you can actually navigate.",
+    siteHref: "https://curriculum-remix.bitsloppy.com",
     githubHref: "https://github.com/bitsloppy/curriculum-remix",
     accent: "#3a9874",
     bgColor: "#1e5c47",
