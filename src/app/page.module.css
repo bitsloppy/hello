@@ -80,7 +80,8 @@
 /* ── PROJECTS GRID ── */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
   gap: 1.25rem;
   padding: 0 1.5rem 2rem;
   list-style: none;
