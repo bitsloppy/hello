@@ -1,8 +1,10 @@
 /**
  * TypeScript declarations for Web Awesome web components.
- * Uses declare module 'react' augmentation for React 19 / Next.js 15 compatibility.
+ * The top-level export {} makes this a module file, which is required
+ * for declare module augmentation to ADD to React types rather than replace them.
  * https://webawesome.com
  */
+export {};
 
 declare module "react" {
   namespace JSX {
