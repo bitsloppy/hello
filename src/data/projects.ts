@@ -23,7 +23,7 @@ export const projects: Project[] = [
     href: "https://sackar-atlas.bitsloppy.com",
     accent: "#7c3aed",
     bgColor: "#3b1a78",
-    status: "live",
+    status: "in-progress",
     image: "/images/sackar-atlas-hero.jpg",
   },
   {
