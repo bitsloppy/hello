@@ -36,6 +36,7 @@ export const projects: Project[] = [
     accent: "#3a9874",
     bgColor: "#1e5c47",
     status: "in-progress",
+    image: "/images/curriculum-remix-hero.jpg",
   },
   {
     slug: "aus-gov-style-rules",
@@ -47,5 +48,6 @@ export const projects: Project[] = [
     accent: "#4a6b8c",
     bgColor: "#23405a",
     status: "tool",
+    image: "/images/aus-gov-style-rules-hero.jpg",
   },
 ];

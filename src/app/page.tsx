@@ -1,6 +1,5 @@
 import AsciiBanner from "@/components/AsciiBanner";
 import ProjectCard from "@/components/ProjectCard";
-import NewProjectCard from "@/components/NewProjectCard";
 import { projects } from "@/data/projects";
 import styles from "./page.module.css";
 
@@ -40,9 +39,6 @@ export default function Home() {
               <ProjectCard project={project} />
             </li>
           ))}
-          <li>
-            <NewProjectCard />
-          </li>
         </ul>
       </main>
 
