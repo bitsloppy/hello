@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* ── FOOTER ── */}
       <footer className={styles.footer}>
-        <span className={styles.footerSig}>BITSLOPPY.VERCEL.APP &#47;&#47; HANDCRAFTED WITH PUBLIC DATA</span>
+        <span className={styles.footerSig}>BITSLOPPY.COM &#47;&#47; HANDCRAFTED WITH PUBLIC DATA</span>
         <span className={styles.footerSig}>MIT LICENSE</span>
       </footer>
     </>

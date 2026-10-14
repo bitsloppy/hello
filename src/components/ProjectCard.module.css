@@ -12,6 +12,7 @@
 /* subtle dot-grid overlay */
 .img {
   object-fit: cover;
+  transform: scale(1.2);
   z-index: 1;
 }
 
