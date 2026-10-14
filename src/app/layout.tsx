@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Workbench, Silkscreen, Courier_Prime } from "next/font/google";
 import Script from "next/script";
 import WebAwesomeLoader from "@/components/WebAwesomeLoader";
+import KoFiWidget from "@/components/KoFiWidget";
 import "./globals.css";
 
 const workbench = Workbench({
@@ -55,6 +56,7 @@ export default function RootLayout({
       <body>
         {/* Injects WA component loader as type="module" script */}
         <WebAwesomeLoader />
+        <KoFiWidget />
         {children}
       </body>
       {/* Google Analytics */}
