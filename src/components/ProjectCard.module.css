@@ -124,6 +124,14 @@
   margin: 0;
 }
 
+.released {
+  font-family: var(--font-courier), monospace;
+  font-size: 11px;
+  color: rgba(49, 72, 96, 0.4);
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
 /* ── Footer: CTA row ── */
 .ctaRow {
   display: flex;

@@ -13,6 +13,8 @@ export interface Project {
   bgColor: string;
   status: ProjectStatus;
   image?: string;
+  /** Public release date, e.g. "Sep 2026" */
+  releasedAt?: string;
 }
 
 export const projects: Project[] = [
@@ -39,8 +41,9 @@ export const projects: Project[] = [
     githubHref: "https://github.com/bitsloppy/curriculum-remix",
     accent: "#3a9874",
     bgColor: "#1e5c47",
-    status: "in-progress",
+    status: "live",
     image: "/images/curriculum-remix-hero.jpg",
+    releasedAt: "Sep 2026",
   },
   {
     slug: "aus-gov-style-rules",
@@ -53,5 +56,6 @@ export const projects: Project[] = [
     bgColor: "#23405a",
     status: "tool",
     image: "/images/aus-gov-style-rules-hero.jpg",
+    releasedAt: "Sep 2026",
   },
 ];

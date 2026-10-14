@@ -11,7 +11,7 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
-  const { tag, title, description, accent, bgColor, status, image, siteHref, githubHref } =
+  const { tag, title, description, accent, bgColor, status, image, siteHref, githubHref, releasedAt } =
     project;
 
   const primaryHref = siteHref ?? githubHref;
@@ -60,6 +60,9 @@ export default function ProjectCard({ project }: { project: Project }) {
           <strong className={styles.title}>{title}</strong>
         </a>
         <p className={styles.desc}>{description}</p>
+        {releasedAt && (
+          <span className={styles.released}>// released {releasedAt}</span>
+        )}
       </div>
 
       {/* ── Footer slot: explore (if site) + github ── */}
